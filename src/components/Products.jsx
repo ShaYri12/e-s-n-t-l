@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product">
-      <div className="product_img relative group aspect-square">
+      <div className="product_img relative group">
         <img
           src={product.imgSrc}
           className="lazy-load w-full max-h-[265px] object-contain"
