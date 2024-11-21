@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Partners from "./components/Partners";
 import Products from "./components/Products";
 import Services from "./components/Services";
+import CustomSlider from "./components/Slider";
 import TextArea from "./components/TextArea";
 import Tikmarks from "./components/Tikmarks";
 
@@ -19,6 +20,7 @@ function App() {
         <TextArea />
         <Services />
         <Partners />
+        <CustomSlider />
       </main>
       <Footer />
     </div>

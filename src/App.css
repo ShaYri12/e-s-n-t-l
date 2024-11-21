@@ -63,12 +63,54 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
-  /* .product_bottom {
-    flex-direction: column;
-  }
+.slick-dots {
+  bottom: 195px !important;
+}
 
-  .product_button {
-    width: 100%;
-  } */
+@media screen and (max-width: 1024px) {
+  .slick-dots {
+    bottom: 180px !important;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  .slick-dots {
+    bottom: 200px !important;
+  }
+}
+
+.slick-dots ul {
+  justify-content: end;
+  padding-right: 23px;
+}
+
+/* Add these Tailwind classes to your CSS or style file */
+.slick-dots li button:before {
+  display: none;
+  background-color: transparent !important;
+}
+
+.slick-dots li {
+  position: relative;
+  background-color: transparent !important;
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.slick-dots li .dot {
+  width: 13px; /* Highlighted dot width */
+  height: 13px; /* Highlighted dot height */
+  border-radius: 20px; /* Elliptical shape */
+  background-color: transparent !important;
+  border: 3px solid #dadada;
+}
+
+.slick-dots li.slick-active span {
+  width: 60px !important; /* Highlighted dot width */
+  height: 13px; /* Highlighted dot height */
+  border-radius: 20px; /* Elliptical shape */
+}
+.slick-dots li.slick-active {
+  width: 60px !important; /* Highlighted dot width */
+  height: 13px; /* Highlighted dot height */
 }
