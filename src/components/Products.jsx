@@ -1,11 +1,13 @@
 import { AiFillStar } from "react-icons/ai";
+import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
-  const { name, price, oldPrice, rating, reviews, tag, imgSrc } = product;
+  const { name, price, oldPrice, rating, reviews, tag, imgSrc, reviewPerson } =
+    product;
 
   return (
     <div className="product">
-      <div className="product_img relative">
+      <div className="product_img relative group aspect-square">
         <img
           src={product.imgSrc}
           className="lazy-load w-full max-h-[265px] object-contain"
@@ -13,31 +15,42 @@ const ProductCard = ({ product }) => {
         />
         {tag && (
           <button
-            className={`hover:bg-[#151515] bg-[#fafafa] hover:text-white cursor-pointer h-[23px] w-[90px] border-[2px] border-[#151515] text-[#151515] text-[11px] font-bold absolute top-[10px] right-[10px] rounded-full`}
+            className={`${
+              tag === "Nieuw"
+                ? "hover:bg-[#FF6600] border-[#FF6600] text-[#FF6600] hover:text-white bg-[#fafafa]"
+                : tag === "2 + 1 Gratis"
+                ? "hover:bg-white border-[#3992ff] bg-[#3992ff] hover:text-[#3992ff] text-white"
+                : "hover:bg-[#151515] border-[#151515] text-[#151515] hover:text-white bg-[#fafafa]"
+            } cursor-pointer h-[21px] sm:h-[23px] sm:w-[90px] px-3 border-[2px] text-[10px] sm:text-[11px] font-bold absolute top-[10px] right-[10px] rounded-full transition`}
           >
             {tag}
           </button>
         )}
-        <div className="hover_popup flex w-[calc(100%-30px)] left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] rounded-full absolute gap-4 shadow-lg transition-all">
+        <div className="hover_popup flex sm:flex-row flex-col w-[calc(100%-30px)] left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] sm:rounded-full rounded-[20px] absolute sm:gap-4 gap-1 shadow-lg transition-all group-hover:opacity-100 group-hover:bottom-0">
           <div>
             <img
-              src="./img/review_person1.png"
-              className="size-[54px] rounded-full object-cover"
+              src={reviewPerson}
+              className="size-[40px] sm:size-[54px] rounded-full object-cover"
               alt="Reviewer"
             />
           </div>
           <div>
-            <p className="text-[14px] text-[#1b1f22] leading-[1] pb-2 whitespace-nowrap">
+            <p className="sm:text-left text-center text-[14px] text-[#1b1f22] leading-[1] pb-2 sm:whitespace-nowrap">
               “Ruikt super lekker!”
             </p>
-            <img src="./img/5-stars.png" className="w-[60px]" alt="stars" />
+            <p className="text-[11px] text-[#444444] flex gap-[1px] items-center sm:justify-start justify-center leading-[1]">
+              {[...Array(rating)].map((_, index) => (
+                <FaStar key={index} className="text-[#ffb400]" />
+              ))}
+            </p>
           </div>
           <span className="absolute inline-block right-[45px] bottom-[-10px] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:border-l-[8px] before:border-r-[8px] before:border-t-[10px] before:border-l-transparent before:border-r-transparent before:border-t-white w-[15px] h-[10px]"></span>
         </div>
       </div>
-      <div className="product_bottom px-3 flex justify-between items-center pt-5 gap-[15px]">
+
+      <div className="product_bottom px-3 flex justify-between items-center pt-5">
         <div className="product_bottom_left">
-          <h5 className="text-[14px] font-bold text-[#001623] leading-[2]">
+          <h5 className="text-[14px] font-bold text-[#001623] sm:leading-[2]">
             {name}
           </h5>
           <div className="flex items-center gap-2 flex-wrap pt-[5px] pb-[8px] relative">
@@ -49,9 +62,9 @@ const ProductCard = ({ product }) => {
                 </p>
               )}
             </div>
-            <p className="text-[11px] text-[#444444] flex gap-[6px] items-center leading-[1]">
+            <p className="text-[11px] text-[#444444] flex gap-[1px] items-center leading-[1]">
               {[...Array(rating)].map((_, index) => (
-                <AiFillStar key={index} className="text-[#ffb400]" />
+                <FaStar key={index} className="text-[#ffb400]" />
               ))}
               ({reviews})
             </p>
@@ -59,9 +72,11 @@ const ProductCard = ({ product }) => {
         </div>
         <a
           href="#"
-          className="product_button relative z-[999999] flex items-center justify-center border-[2px] border-[#ff6800] rounded-[10px] w-[55px] h-[40px]"
+          className="product_button relative z-[999999] hover:opacity-[0.8] opacity-1 flex items-center justify-center border-[2px] border-[#ff6800] rounded-[10px] sm:w-[55px] w-[42px] min-w-[35px] sm:h-[40px] h-[32px] min-h-[30px]"
         >
-          <span className="text-[30px] text-[#ff6800] font-light">+</span>
+          <span className="text-[25px] sm:text-[30px] text-[#ff6800] font-light">
+            +
+          </span>
         </a>
       </div>
     </div>
@@ -78,6 +93,7 @@ export default function Products() {
       reviews: 632,
       tag: "Populair",
       imgSrc: "/assets/baccarat-rouge-540-product.png",
+      reviewPerson: "/assets/review_person1.png",
     },
     {
       name: "Oud Satin Mood",
@@ -87,6 +103,7 @@ export default function Products() {
       reviews: 632,
       tag: "Nieuw",
       imgSrc: "/assets/oud-satin-mood-maison-francis-kurkdjian-product.png",
+      reviewPerson: "/assets/review_person2.png",
     },
     {
       name: "Lost Cherry",
@@ -95,6 +112,7 @@ export default function Products() {
       rating: 5,
       reviews: 632,
       imgSrc: "/assets/lost-cherry-tom-ford-product.png",
+      reviewPerson: "/assets/review_person1.png",
     },
     {
       name: "Baccarat Rouge",
@@ -104,6 +122,7 @@ export default function Products() {
       reviews: 632,
       tag: "2 + 1 Gratis",
       imgSrc: "/assets/baccarat-rouge-540-product.png",
+      reviewPerson: "/assets/review_person2.png",
     },
   ];
 

@@ -44,3 +44,31 @@ body {
     max-width: 768px;
   }
 }
+
+.logos-contianer {
+  justify-content: space-between;
+  column-gap: 8px;
+}
+
+@media screen and (max-width: 361px) {
+  .logos-contianer {
+    justify-content: center;
+    column-gap: 35px;
+  }
+}
+
+@media screen and (min-width: 494px) {
+  .product_bottom {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* .product_bottom {
+    flex-direction: column;
+  }
+
+  .product_button {
+    width: 100%;
+  } */
+}
