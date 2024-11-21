@@ -7,7 +7,6 @@ import Products from "./components/Products";
 import Services from "./components/Services";
 import CustomSlider from "./components/Slider";
 import TextArea from "./components/TextArea";
-import Tikmarks from "./components/Tikmarks";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
       <Header />
       <main className="border-x-[1px] border-x-[#efefef] border-dashed">
         <Categories />
-        <Tikmarks />
         <Products />
         <TextArea />
         <Services />

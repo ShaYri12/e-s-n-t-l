@@ -1,13 +1,13 @@
 import React from "react";
 
-const ServiceBox = ({ iconSrc, title, description, iconWidth }) => {
+const ServiceBox = ({ iconSrc, title, description, iconWidth, alt }) => {
   return (
     <div className="service_box flex items-center justify-center py-8">
       <div className="text-center">
         <div className="service_icon flex items-center justify-center h-[35px]">
           <img
             src={iconSrc}
-            alt={title}
+            alt={alt}
             style={{ width: iconWidth }}
             className={`lazy-load`}
           />
@@ -23,25 +23,29 @@ const Services = () => {
   const services = [
     {
       iconSrc: "/assets/reviews-icon-service.png",
-      title: "Als best beoordeeld",
+      alt: "esntl reviews",
+      title: "Rating",
       description: "Beste parfumerie NL",
       iconWidth: "50px",
     },
     {
       iconSrc: "/assets/betaling-icon-service.png",
-      title: "Veilig betalen",
+      alt: "esntl beveiligd betalen",
+      title: "Secure Payment",
       description: "Betaal met iDeal/Klarna",
       iconWidth: "33px",
     },
     {
       iconSrc: "/assets/bezorging-icon-service.png",
-      title: "Gratis bezorging",
+      alt: "esntl bezorging",
+      title: "Fast",
       description: "Binnen 24/u verzonden",
       iconWidth: "45px",
     },
     {
       iconSrc: "/assets/kwaliteit-icon-service.png",
-      title: "100% Kwaliteit",
+      alt: "esntl kwaliteit",
+      title: "Quality",
       description: "Alleen de hoogste kwaliteit",
       iconWidth: "40px",
     },
@@ -57,6 +61,7 @@ const Services = () => {
             title={service.title}
             description={service.description}
             iconWidth={service.iconWidth}
+            alt={service.alt}
           />
         ))}
       </div>

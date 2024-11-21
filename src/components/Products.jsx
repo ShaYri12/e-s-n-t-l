@@ -1,4 +1,4 @@
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
@@ -19,14 +19,14 @@ const ProductCard = ({ product }) => {
               tag === "Nieuw"
                 ? "hover:bg-[#FF6600] border-[#FF6600] text-[#FF6600] hover:text-white bg-[#fafafa]"
                 : tag === "2 + 1 Gratis"
-                ? "hover:bg-white border-[#3992ff] bg-[#3992ff] hover:text-[#3992ff] text-white"
-                : "hover:bg-[#151515] border-[#151515] text-[#151515] hover:text-white bg-[#fafafa]"
+                ? "hover:bg-[#fafafa] border-[#3992ff] bg-[#3992ff] hover:text-[#3992ff] text-white"
+                : "hover:bg-[#515151] border-[#515151] text-[#515151] hover:text-white bg-[#fafafa]"
             } cursor-pointer h-[21px] sm:h-[23px] sm:w-[90px] px-3 border-[2px] text-[10px] sm:text-[11px] font-bold absolute top-[10px] right-[10px] rounded-full transition`}
           >
             {tag}
           </button>
         )}
-        <div className="hover_popup flex sm:flex-row flex-col w-[calc(100%-30px)] left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] sm:rounded-full rounded-[20px] absolute sm:gap-4 gap-1 shadow-lg transition-all group-hover:opacity-100 group-hover:bottom-0">
+        <div className="hover_popup flex sm:flex-row flex-col w-fit sm:pe-4 left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] sm:rounded-full rounded-[20px] absolute sm:gap-4 gap-1 shadow-lg transition-all group-hover:opacity-100 group-hover:bottom-0">
           <div>
             <img
               src={reviewPerson}
@@ -50,18 +50,10 @@ const ProductCard = ({ product }) => {
 
       <div className="product_bottom px-3 flex justify-between items-center pt-5">
         <div className="product_bottom_left">
-          <h5 className="text-[14px] font-bold text-[#001623] sm:leading-[2]">
-            {name}
-          </h5>
-          <div className="flex items-center gap-2 flex-wrap pt-[5px] pb-[8px] relative">
-            <div className="price flex items-center">
-              <p className="font-medium text-[14px] text-[#323232]">€{price}</p>
-              {oldPrice && (
-                <p className="ml-1 font-medium text-[#b3b3b3] relative before:absolute before:h-[1px] before:bg-[#b3b3b3] before:w-full before:left-0 before:top-[50%] before:translate-y-[-50%]">
-                  €{oldPrice}
-                </p>
-              )}
-            </div>
+          <div className="flex gap-2 flex-wrap">
+            <h5 className="text-[14px] font-[500] text-[#001623] sm:leading-[2]">
+              {name}
+            </h5>
             <p className="text-[11px] text-[#444444] flex gap-[1px] items-center leading-[1]">
               {[...Array(rating)].map((_, index) => (
                 <FaStar key={index} className="text-[#ffb400]" />
@@ -69,13 +61,23 @@ const ProductCard = ({ product }) => {
               ({reviews})
             </p>
           </div>
+          <div className="flex items-center gap-2 flex-wrap pt-[5px] pb-[8px] relative">
+            <div className="price flex items-center">
+              <p className="font-medium text-[14px] text-[#323232]">€{price}</p>
+              {oldPrice && (
+                <p className="ml-1 text-[14px] text-[#c5c5c5] relative before:absolute before:h-[1px] before:bg-[#c5c5c5] before:w-full before:left-0 before:top-[50%] before:translate-y-[-50%]">
+                  €{oldPrice}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
         <a
           href="#"
           className="product_button relative z-[999999] hover:opacity-[0.8] opacity-1 flex items-center justify-center border-[2px] border-[#ff6800] rounded-[10px] sm:w-[55px] w-[42px] min-w-[35px] sm:h-[40px] h-[32px] min-h-[30px]"
         >
-          <span className="text-[25px] sm:text-[30px] text-[#ff6800] font-light">
-            +
+          <span className="min-w-[20px] sm:min-w-[25px] text-[#ff6800] font-light">
+            <AiOutlineShoppingCart className="text-[20px] sm:text-[25px]" />
           </span>
         </a>
       </div>

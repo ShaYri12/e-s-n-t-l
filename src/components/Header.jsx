@@ -85,40 +85,47 @@ const Header = () => {
         style={{ marginTop: menuOneHeight }}
       >
         <div className="container flex justify-between items-center relative w-full h-full px-[0.8rem] sm:px-[1.25rem]">
-          <a href="#" className="logo relative z-[9999]">
-            <img src="/assets/logo-esntl.png" className="w-[70px]" alt="logo" />
-          </a>
-
-          <div className="menu2_mid flex items-center">
-            <div className="flex gap-2 sm:mr-10 ">
+          <div className="flex items-center gap-8">
+            <a href="#" className="logo relative z-[9999]">
+              <img
+                src="/assets/logo-esntl.png"
+                className="w-[70px]"
+                alt="esntl logo"
+              />
+            </a>
+            <div className="gap-2 sm:mr-10 sm:flex hidden">
               <a
                 href="#"
-                className="text-[#050409] text-[12px] sm:gap-4 gap-2 flex items-center justify-center sm:w-[100px] w-[80px] h-[33px] rounded-full border-[2px] border-[#dadbdd]"
+                className="text-[#050409] group uppercase md:text-[12px] text-[10px] sm:gap-2 gap-1 flex items-center justify-center px-3 py-2 rounded-full hover:border-[1px] hover:border-[#dadbdd]"
               >
-                Dames
-                <IoCloseSharp />
+                Verzending
+                <IoCloseSharp className="group-hover:flex hidden" />
               </a>
               <a
                 href="#"
-                className="text-[#050409] text-[12px] sm:gap-4 gap-2 flex items-center justify-center sm:w-[100px] w-[80px] h-[33px] rounded-full border-[2px] border-[#dadbdd]"
+                className="text-[#050409] group uppercase md:text-[12px] text-[10px] sm:gap-2 gap-1 flex items-center justify-center px-3 py-2 rounded-full hover:border-[1px] hover:border-[#dadbdd]"
               >
-                Haren
-                <IoCloseSharp />
+                Retourbeleid
+                <IoCloseSharp className="group-hover:flex hidden" />
               </a>
             </div>
-            <p className="sm:flex hidden text-[#414655] text-[12px]">Unisex</p>
           </div>
 
-          <a href="#" className="shopcart relative">
-            <img
-              src="/assets/cart-icon.png"
-              className="w-[28px]"
-              alt="shopping"
-            />
-            <span className="absolute w-[17px] h-[17px] rounded-full bg-[#ff0000] bottom-[-4px] right-[1px] text-[12px] leading-[1px] text-white font-bold flex items-center justify-center">
-              1
+          <div className="flex items-center gap-8">
+            <span className="w-[65px] sm:flex hidden">
+              <img src="/assets/trustpilot.png" alt="trustpilot esntl" />
             </span>
-          </a>
+            <a href="#" className="shopcart relative">
+              <img
+                src="/assets/cart-icon.png"
+                className="w-[28px]"
+                alt="shopping"
+              />
+              <span className="absolute w-[17px] h-[17px] rounded-full bg-[#ff0000] bottom-[-4px] right-[1px] text-[12px] leading-[1px] text-white font-bold flex items-center justify-center">
+                1
+              </span>
+            </a>
+          </div>
         </div>
       </div>
 
