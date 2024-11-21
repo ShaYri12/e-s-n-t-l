@@ -72,7 +72,7 @@ const CustomSlider = () => {
 
   return (
     <div className="container relative w-full overflow-hidden pb-[45px]">
-      <div className="text_top flex items-center justify-between min-h-10 md:pl-[25px] md:pr-3 md:px-0 px-3 relative">
+      <div className="flex items-center justify-between min-h-10 md:pl-[25px] md:pr-3 md:px-0 px-3 relative">
         <span className="h-[1px] border-t-[1px] border-t-[#efefef] border-dashed z-[99] absolute w-[100vw] top-0 left-[50%] translate-x-[-50%]"></span>
         <h1 className="text-[17px] font-bold text-[#2f2f2f] sm:pb-0 pb-1">
           Uitgelicht: Tom Ford Mandarino Di Amalfi
@@ -86,7 +86,7 @@ const CustomSlider = () => {
               alt={`Slide ${slide.id}`}
               className="w-full sm:h-[540px] sm:object-cover object-contain"
             />
-            <div className="slide_bottom bg-[#000000] px-4 sm:px-7 py-6">
+            <div className="bg-[#000000] px-4 sm:px-7 py-6">
               <h6 className="pb-[8px] text-[#fff] text-[13px] font-black uppercase">
                 {slide.title}
               </h6>

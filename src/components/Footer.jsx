@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="overflow-hidden md:px-6 px-4">
       <div className="container pb-[60px]">
         <div className="pt-6 pb-6 grid grid-cols-2 relative">
-          <div className="footer_box">
+          <div className="">
             <h5 className="pb-4 leading-[1] text-[#111116] text-[15px]">
               Parfum merken
             </h5>
@@ -27,7 +27,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer_box">
+          <div className="">
             <h5 className="pb-4 leading-[1] text-[#111116] text-[15px]">
               Meest verkocht
             </h5>

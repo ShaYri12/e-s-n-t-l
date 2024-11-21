@@ -4,8 +4,8 @@ import { IoCloseSharp } from "react-icons/io5";
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [menuOneHeight, setMenuOneHeight] = useState(0);
-  const menuOneRef = useRef(null); // Ref to access menu_one element
+  const [bannerHeight, setBannerHeight] = useState(0);
+  const bannerRef = useRef(null); // Ref to access banner element
 
   useEffect(() => {
     // Make sure the script only runs on the client-side
@@ -15,12 +15,11 @@ const Header = () => {
       // Get the current scroll position
       const scrollTop = window.scrollY;
 
-      // Get the height of the first menu (menu_one)
-      const menuOneHeight =
-        document.querySelector(".menu_one")?.offsetHeight || 0;
+      // Get the height of the first menu (banner)
+      const bannerHeight = document.querySelector(".banner")?.offsetHeight || 0;
 
-      // Check if we have scrolled past the height of menu_one
-      if (scrollTop >= menuOneHeight) {
+      // Check if we have scrolled past the height of banner
+      if (scrollTop >= bannerHeight) {
         setIsSticky(true); // Set menu_two as sticky
       } else {
         setIsSticky(false); // Remove sticky class
@@ -42,16 +41,16 @@ const Header = () => {
     };
   }, []);
 
-  // Using useEffect to set menuOneHeight when the component mounts
+  // Using useEffect to set bannerHeight when the component mounts
   useEffect(() => {
-    if (menuOneRef.current) {
-      setMenuOneHeight(menuOneRef.current.offsetHeight); // Get height of menu_one
+    if (bannerRef.current) {
+      setBannerHeight(bannerRef.current.offsetHeight); // Get height of banner
     }
 
     // Optionally, update the height if the window resizes
     const handleResize = () => {
-      if (menuOneRef.current) {
-        setMenuOneHeight(menuOneRef.current.offsetHeight); // Recalculate height
+      if (bannerRef.current) {
+        setBannerHeight(bannerRef.current.offsetHeight); // Recalculate height
       }
     };
 
@@ -66,8 +65,8 @@ const Header = () => {
     <header className="site_header">
       {/* Top Menu */}
       <div
-        ref={menuOneRef}
-        className="menu_one bg-[#1e1e1e] py-[9.2px] flex items-center fixed top-0 left-0 w-full z-[999999999]"
+        ref={bannerRef}
+        className="banner bg-[#1e1e1e] py-[9.2px] flex items-center fixed top-0 left-0 w-full z-[999999999]"
       >
         <div className="container px-3 md:px-[1.25rem]">
           <p className="text-center text-white text-[11px]">
@@ -81,8 +80,8 @@ const Header = () => {
 
       {/* Menu Two (with dynamic margin-top) */}
       <div
-        className="menu_two lg:h-[80px] h-[65px] flex items-center"
-        style={{ marginTop: menuOneHeight }}
+        className="lg:h-[80px] h-[65px] flex items-center"
+        style={{ marginTop: bannerHeight }}
       >
         <div className="container flex justify-between items-center relative w-full h-full px-[0.8rem] sm:px-[1.25rem]">
           <div className="flex items-center gap-8">
@@ -133,7 +132,7 @@ const Header = () => {
       <div
         className="lg:h-[80px] h-[65px] w-full flex items-center fixed left-0 z-[9999999] bg-white shadow-md"
         style={{
-          top: `${menuOneHeight}px`,
+          top: `${bannerHeight}px`,
           display: isSticky ? "flex" : "none",
         }}
       >

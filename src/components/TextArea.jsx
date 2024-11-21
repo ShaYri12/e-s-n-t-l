@@ -13,10 +13,10 @@ const TextArea = () => {
     ? fullText
     : words.slice(0, maxWords).join(" ");
   return (
-    <div className="text_area relative bg-[#fafafa] overflow-hidden">
+    <div className="relative bg-[#fafafa] overflow-hidden">
       <div className="container pb-[50px] px-4 sm:px-[1.25rem]">
-        <div className="text_content pb-[10px] mb-[30px] relative">
-          <div className="text_top flex items-center justify-between h-10 pl-[25px] pr-0 relative mb-2">
+        <div className="pb-[10px] mb-[30px] relative">
+          <div className="flex items-center justify-between h-10 pl-[25px] pr-0 relative mb-2">
             <span className="h-[1px] border-t-[1px] border-t-[#efefef] border-dashed z-[99] absolute w-[100vw] top-0 left-[50%] translate-x-[-50%]"></span>
             <h1 className="text-[16px] font-bold text-[#001623]">
               ESNTL: Parfum Olie
@@ -88,8 +88,8 @@ const TextArea = () => {
           </div>
           <span className="h-[1px] border-t-[1px] border-t-[#efefef] border-dashed z-[99] absolute w-[100vw] bottom-0 left-[50%] translate-x-[-50%]"></span>
         </div>
-        <div className="text_content relative">
-          <div className="text_top flex items-center justify-between h-10 pl-[25px] pr-0 relative">
+        <div className="relative">
+          <div className="flex items-center justify-between h-10 pl-[25px] pr-0 relative">
             <span className="h-[1px] border-t-[1px] border-t-[#efefef] border-dashed z-[99] absolute w-[100vw] top-0 left-[50%] translate-x-[-50%]"></span>
             <h2 className="text-[16px] font-bold text-[#001623]">Geuren</h2>
             <button className="close">
