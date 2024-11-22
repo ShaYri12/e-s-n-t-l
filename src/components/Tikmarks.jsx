@@ -3,7 +3,7 @@ import { IoMdCheckmark } from "react-icons/io";
 
 const Tikmarks = () => {
   return (
-    <div className="tikmark_area bg-[#fafafa] flex items-center relative overflow-hidden">
+    <div className="bg-[#fafafa] flex items-center relative overflow-hidden">
       <div className="container py-[10px] px-[1.25rem]">
         <ul className="flex items-center sm:justify-center justify-between sm:gap-14 gap-x-4 gap-y-2 flex-wrap">
           <li className="flex items-center text-[12px] text-[#3d3d3d] gap-5">

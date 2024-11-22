@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product">
-      <div className="product_img relative group">
+      <div className="relative group">
         <img
           src={product.imgSrc}
           className="lazy-load w-full max-h-[265px] object-contain"
@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
             {tag}
           </button>
         )}
-        <div className="hover_popup flex sm:flex-row flex-col w-fit sm:pe-4 left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] sm:rounded-full rounded-[20px] absolute sm:gap-4 gap-1 shadow-lg transition-all group-hover:opacity-100 group-hover:bottom-0">
+        <div className="flex sm:flex-row flex-col w-fit sm:pe-4 left-[15px] bottom-[-25px] opacity-0 items-center bg-[#ffffffcf] p-[5px] sm:rounded-full rounded-[20px] absolute sm:gap-4 gap-1 shadow-lg transition-all group-hover:opacity-100 group-hover:bottom-0">
           <div>
             <img
               src={reviewPerson}
@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="product_bottom px-3 flex justify-between items-center pt-5">
-        <div className="product_bottom_left">
+        <div className="">
           <div className="flex gap-2 flex-wrap">
             <h5 className="text-[14px] font-[500] text-[#001623] sm:leading-[2]">
               {name}
@@ -74,7 +74,7 @@ const ProductCard = ({ product }) => {
         </div>
         <a
           href="#"
-          className="product_button relative z-[999999] hover:opacity-[0.8] opacity-1 flex items-center justify-center border-[2px] border-[#ff6800] rounded-[10px] sm:w-[55px] w-[42px] min-w-[35px] sm:h-[40px] h-[32px] min-h-[30px]"
+          className="relative z-[999999] hover:opacity-[0.8] opacity-1 flex items-center justify-center border-[2px] border-[#ff6800] rounded-[10px] sm:w-[55px] w-[42px] min-w-[35px] sm:h-[40px] h-[32px] min-h-[30px]"
         >
           <span className="min-w-[20px] sm:min-w-[25px] text-[#ff6800] font-light">
             <AiOutlineShoppingCart className="text-[20px] sm:text-[25px]" />

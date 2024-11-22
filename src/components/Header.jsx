@@ -195,8 +195,8 @@ import { throttle } from "lodash";
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [menuOneHeight, setMenuOneHeight] = useState(0);
-  const menuOneRef = useRef(null); // Ref to access menu_one element
+  const [bannerHeight, setBannerHeight] = useState(0);
+  const bannerRef = useRef(null); // Ref to access banner element
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -255,8 +255,8 @@ const Header = () => {
     <header className="site_header">
       {/* Top Menu */}
       <div
-        ref={menuOneRef}
-        className="menu_one bg-[#1e1e1e] py-[9.2px] flex items-center fixed top-0 left-0 w-full z-[999999999]"
+        ref={bannerRef}
+        className="banner bg-[#1e1e1e] py-[9.2px] flex items-center fixed top-0 left-0 w-full z-[999999999]"
       >
         <div className="container px-3 md:px-[1.25rem]">
           <p className="text-center text-white text-[11px]">
@@ -270,8 +270,8 @@ const Header = () => {
 
       {/* Menu Two (with dynamic margin-top) */}
       <div
-        className="menu_two lg:h-[80px] h-[65px] flex items-center"
-        style={{ marginTop: menuOneHeight }}
+        className="lg:h-[80px] h-[65px] flex items-center"
+        style={{ marginTop: bannerHeight }}
       >
         <div className="container flex justify-between items-center relative w-full h-full px-[0.8rem] sm:px-[1.25rem]">
           <div className="flex items-center gap-8">

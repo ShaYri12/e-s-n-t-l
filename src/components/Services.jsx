@@ -2,7 +2,7 @@ import React from "react";
 
 const ServiceBox = ({ iconSrc, title, description, iconWidth, alt }) => {
   return (
-    <div className="service_box flex items-center justify-center py-8">
+    <div className="flex items-center justify-center py-8">
       <div className="text-center">
         <div className="service_icon flex items-center justify-center h-[35px]">
           <img
