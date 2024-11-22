@@ -185,7 +185,7 @@ const Header = () => {
 
         <div className="w-full left-0 h-[2px] bg-transparent bottom-[-1px] absolute block overflow-hidden">
           <div
-            className="bg-black h-full transition-all"
+            className="bg-black h-full transition-all duration-300 ease"
             style={{ width: `${scrollProgress}%` }}
           ></div>
         </div>
