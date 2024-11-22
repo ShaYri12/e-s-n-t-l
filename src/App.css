@@ -14,14 +14,12 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow-y: scroll; /* Ensure the page scrolls */
 }
 
 #root {
   margin: 0;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .container {
